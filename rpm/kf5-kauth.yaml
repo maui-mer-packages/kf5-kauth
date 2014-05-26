@@ -1,0 +1,72 @@
+Name         : kf5-kauth
+Version      : 4.99.0
+Release      : 1
+Group        : System/Base
+License      : GPLv2+
+Summary      : KDE Frameworks 5 Tier 2 module to perform actions as privileged user
+Description  : |
+  KAuth is a framework to let applications perform actions as a privileged user.
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+Patches:
+    - kauth-find-polkit-qt5.patch
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kf5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - kf5-kcoreaddons-devel
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+    - polkit-qt5-1
+Requires:
+    - kf5-filesystem
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc COPYING.LIB README.md"
+    - "%{_kf5_libdir}/libKF5Auth.so.*"
+    - "%{_kf5_sysconfdir}/dbus-1/system.d/*"
+    - "%{_kf5_plugindir}/kauth/helper/kauth_helper_plugin.so"
+    - "%{_kf5_plugindir}/kauth/backend/kauth_backend_plugin.so"
+    - "%{_kf5_datadir}/kf5/kauth/"
+    - "%{_libexecdir}/kauth/kauth-policy-gen"
+FilesInput: kauth5_qt.lang
+
+SubPackages:
+    - Name: devel
+      Group: Development/Libraries
+      Summary: Development files for %{name}
+      Description: |
+        The %{name}-devel package contains the files necessary to develop applications
+        that use %{name}.
+      Files:
+          - "%{_kf5_includedir}/kauth_version.h"
+          - "%{_kf5_includedir}/KAuth"
+          - "%{_kf5_libdir}/libKF5Auth.so"
+          - "%{_kf5_libdir}/cmake/KF5Auth"
+          - "%{_datadir}/qt5/mkspecs/modules/qt_KAuth.pri"
