@@ -82,8 +82,8 @@ rm -rf %{buildroot}
 %doc COPYING.LIB README.md
 %{_kf5_libdir}/libKF5Auth.so.*
 %{_kf5_sysconfdir}/dbus-1/system.d/*
-%{_kf5_plugindir}/kauth/helper/kauth_helper_plugin.so
-%{_kf5_plugindir}/kauth/backend/kauth_backend_plugin.so
+%{_qt5_plugindir}/kauth/helper/kauth_helper_plugin.so
+%{_qt5_plugindir}/kauth/backend/kauth_backend_plugin.so
 %{_kf5_datadir}/kf5/kauth/
 %{_libexecdir}/kauth/kauth-policy-gen
 # >> files
