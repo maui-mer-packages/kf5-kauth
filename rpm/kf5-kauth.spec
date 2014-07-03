@@ -9,7 +9,7 @@ Name:       kf5-kauth
 # << macros
 
 Summary:    KDE Frameworks 5 Tier 2 module to perform actions as privileged user
-Version:    4.100.0
+Version:    5.0.0
 Release:    1
 Group:      System/Base
 License:    GPLv2+
