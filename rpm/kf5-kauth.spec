@@ -17,7 +17,6 @@ URL:        http://www.kde.org
 Source0:    %{name}-%{version}.tar.xz
 Source100:  kf5-kauth.yaml
 Source101:  kf5-kauth-rpmlintrc
-Patch0:     kauth-find-polkit-qt5.patch
 Requires:   kf5-filesystem
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
@@ -52,8 +51,6 @@ that use %{name}.
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
-# kauth-find-polkit-qt5.patch
-%patch0 -p1
 # >> setup
 # << setup
 
