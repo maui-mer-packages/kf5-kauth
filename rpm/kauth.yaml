@@ -1,5 +1,5 @@
-Name         : kf5-kauth
-Version      : 5.0.0
+Name         : kauth
+Version      : 5.1.0
 Release      : 1
 Group        : System/Base
 License      : GPLv2+
@@ -25,7 +25,7 @@ PkgBR:
     - kf5-rpm-macros
     - extra-cmake-modules
     - qt5-tools
-    - kf5-kcoreaddons-devel
+    - kcoreaddons-devel
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus
@@ -48,10 +48,9 @@ Files:
     - "%doc COPYING.LIB README.md"
     - "%{_kf5_libdir}/libKF5Auth.so.*"
     - "%{_kf5_sysconfdir}/dbus-1/system.d/*"
-    - "%{_qt5_plugindir}/kauth/helper/kauth_helper_plugin.so"
-    - "%{_qt5_plugindir}/kauth/backend/kauth_backend_plugin.so"
-    - "%{_kf5_datadir}/kf5/kauth/"
-    - "%{_libexecdir}/kauth/kauth-policy-gen"
+    - "%{_kf5_plugindir}/*"
+    - "%{_kf5_datadir}/*"
+    - "%{_kf5_libdir}/libexec/*"
 FilesInput: kauth5_qt.lang
 
 SubPackages:
@@ -65,5 +64,5 @@ SubPackages:
           - "%{_kf5_includedir}/kauth_version.h"
           - "%{_kf5_includedir}/KAuth"
           - "%{_kf5_libdir}/libKF5Auth.so"
-          - "%{_kf5_libdir}/cmake/KF5Auth"
-          - "%{_datadir}/qt5/mkspecs/modules/qt_KAuth.pri"
+          - "%{_kf5_cmakedir}/KF5Auth"
+          - "%{_kf5_mkspecsdir}/qt_KAuth.pri"
