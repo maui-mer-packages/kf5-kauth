@@ -7,7 +7,6 @@ Summary      : KDE Frameworks 5 Tier 2 module to perform actions as privileged u
 Description  : |
   KAuth is a framework to let applications perform actions as a privileged user.
 URL          : http://www.kde.org
-SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
