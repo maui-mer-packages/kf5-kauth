@@ -10,7 +10,7 @@ Name:       kauth
 
 Summary:    KDE Frameworks 5 Tier 2 module to perform actions as privileged user
 Version:    5.3.0
-Release:    1
+Release:    2
 Group:      System/Base
 License:    GPLv2+
 URL:        http://www.kde.org
@@ -31,7 +31,7 @@ BuildRequires:  pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(polkit-qt5-1)
 BuildRequires:  kf5-rpm-macros
 BuildRequires:  extra-cmake-modules
-BuildRequires:  qt5-tools
+BuildRequires:  qt5-qttools-linguist
 BuildRequires:  kcoreaddons-devel
 
 %description
